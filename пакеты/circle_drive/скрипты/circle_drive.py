@@ -11,11 +11,11 @@ class MyNode(DTROS):
         self.pub = rospy.Publisher("~car_cmd", Twist2DStamped, queue_size=1)
 
     def run(self):
-        # publish message every 1 second
-        rate = rospy.Rate(0.5) # 1Hz
+        # publish message every 1 secon
+        rate = rospy.Rate(0.5) # 1Hz 
         while not rospy.is_shutdown():
             msg = Twist2DStamped()
-            msg.v = 2
+            msg.v =22
             msg.omega = 0
             rospy.loginfo("Publishing message")
             self.pub.publish(msg)
