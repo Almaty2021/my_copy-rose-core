@@ -15,7 +15,7 @@ class MyNode(DTROS):
         rate = rospy.Rate(0.5) # 1Hz
         while not rospy.is_shutdown():
             msg = Twist2DStamped()
-            msg.v = 0.0
+            msg.v = 2
             msg.omega = 1.0
             rospy.loginfo("Publishing message")
             self.pub.publish(msg)
@@ -24,7 +24,7 @@ class MyNode(DTROS):
             rospy.loginfo("Publishing message -")
             self.pub.publish(msg)
             rate.sleep()
-
+ 
 if __name__ == '__main__':
     # create the node
     node = MyNode(node_name='circle_drive_node')
